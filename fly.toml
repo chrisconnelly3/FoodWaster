@@ -1,5 +1,5 @@
 # Fly.io config for FoodWaster.
-# Cheapest host that fully works: ~$3–4/mo (512MB always-on machine + 1GB volume).
+# Cheapest host that fully works: ~$3/mo (256MB always-on machine + 1GB volume).
 #
 # First-time deploy (run from the repo root, with the Fly CLI installed + `fly auth login`):
 #   1. fly launch --no-deploy --copy-config --name foodwaster      # pick a unique name if taken
@@ -36,4 +36,4 @@ primary_region = "dfw"   # Dallas — closest region to 75002
 
 [[vm]]
   size = "shared-cpu-1x"
-  memory = "512mb"               # bump to "1gb" if the Whole Foods scrape OOMs (it'll fall back to AI estimates otherwise)
+  memory = "256mb"               # keeps the bill under Fly's ~$5 waiver; bump to "512mb"+ if photo uploads or the Whole Foods scrape OOM
